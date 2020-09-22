@@ -1,0 +1,47 @@
+yarn add express -> Montar o servidor 
+yarn add cors -> Middleware que libera os endereços para acesso a API
+yarn add dotenv -> Configurações sensíveis como "informações de banco de dados, chave de autenticação, etc"
+yarn add mongoose -> ORM para integração com o mongodb
+yarn add mongodb? -> serviço para trabalhar com o mongodb localmente?
+
+
+yarn add nodemon -D -> ouvidor de alteração enquanto o servidor está rodando
+yarn add sucrase -D -> para usar o Import/Export do ES6
+
+Estrutura base:
+  - API-NODE-EXPRESS-MONGO(pasta raiz(root))
+    - src
+      - config -> pasta que exporta configurações adicionais como "modulos da aplicação"
+      - controllers -> pasta que exporta as controllers da aplicação
+      - database -> pasta que gerencia e exporta as configurações do banco de dados, assim como controla as migrations e seeds
+        - migrations
+        - seeds 
+      - helpers -> pasta que exporta helpers para ser utilizado na aplicação, funções, conversores e manipuladores.
+        - connection.js -> arquivo de conexão com banco de dados
+      - middlewares->
+      - models -> pasta que exporta as models da aplicação
+      - routes
+        - routes.js -> Arquivo que gerencia e exportae as rotas da aplicação. 
+      - services -> servicos externos
+
+      - app.js -> arquivo que cria a aplicação, toda a estrutura do app será informada nesse arquivo como "rotas, conexao com banco, etc"
+    - .env -> define as informações sensíveis
+    - .env.example -> arquivo de exemplo de como o arquivo .env deve ser preenchido
+    - .gitignore -> define pastas e arquivos que não serão versionados no git como "node_modules, .env, etc"
+    - .nodemon.json -> configurações referente ao nodemon como "habilitar o Import/Export do ES6".
+    - server.js -> arquivo inicial da aplicação onde é iniciado o servidor
+
+
+
+
+src
+  entities -> folder
+    User.ts -> class
+  repositories -> folder
+  services -> folder
+    CreateUserService.ts -> class
+  app.ts -> file
+  router.ts -> file
+  server.ts -> file
+
+  tsconfig.json -> file
